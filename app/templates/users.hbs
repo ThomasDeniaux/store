@@ -1,0 +1,14 @@
+{{page-title "Users"}}
+<LinkTo class="ui button" @route="users.add">Ajouter</LinkTo>
+<ul>
+  {{#each @model as |user|}}
+    <li>{{user.name}} {{user.mail}}</li>
+    <ul>
+      {{#each user.orders as |order|}}
+       <li>{{order.dateCreation}} {{order.status}}</li>
+      {{/each}}
+    </ul>
+  {{/each}}
+</ul>
+
+{{outlet}}
